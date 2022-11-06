@@ -96,26 +96,12 @@ async function parseCustomBeatmap(
 ): Promise<BeatmapParsingResult> {
   savePath ??= DEFAULT_SAVE_PATH;
 
-  const result = await downloadFile(savePath, {
-    save: cacheFile,
-    url,
-  });
+  const data = await readFile(url as string)
 
-  if (!result.isSuccessful || (!savePath && !result.buffer)) {
-    throw new Error(`Beatmap from "${url}" failed to download: ${result.statusText}`);
-  }
-
-  if (hash && hash !== result.md5) {
-    throw new Error('Beatmap MD5 checksum missmatch!');
-  }
-
-  const data = savePath
-    ? await readFile(result.filePath as string)
-    : result.buffer as Buffer;
 
   return {
     data: parseBeatmapData(data),
-    hash: result.md5 as string,
+    hash: "",
   };
 }
 
