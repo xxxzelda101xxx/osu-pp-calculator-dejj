@@ -20,7 +20,7 @@ This is an advanced performance calculator for the game called osu!
 Add a new dependency to your project via npm:
 
 ```bash
-npm install osu-pp-calculator
+npm install @kionell/osu-pp-calculator
 ```
 
 ## Dependencies
@@ -67,7 +67,7 @@ Beatmaps can be calculated from beatmap ID or custom beatmap file URL. All files
 ### How to use beatmap calculator
 
 ```js
-import { BeatmapCalculator } from 'osu-pp-calculator'
+import { BeatmapCalculator } from '@kionell/osu-pp-calculator'
 
 const beatmapCalculator = new BeatmapCalculator();
 
@@ -232,7 +232,7 @@ You can use almost all options from beatmap calculator for score calculator as w
 ### Example of score calculation
 
 ```js
-import { ScoreCalculator } from 'osu-pp-calculator'
+import { ScoreCalculator } from '@kionell/osu-pp-calculator'
 
 const scoreCalculator = new ScoreCalculator();
 
